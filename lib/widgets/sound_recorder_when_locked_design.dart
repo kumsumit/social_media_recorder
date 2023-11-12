@@ -20,7 +20,7 @@ class SoundRecorderWhenLockedDesign extends StatelessWidget {
   final Widget? sendButtonIcon;
   // ignore: sort_constructors_first
   const SoundRecorderWhenLockedDesign({
-    Key? key,
+    super.key,
     required this.fullRecordPackageHeight,
     required this.sendButtonIcon,
     required this.soundRecordNotifier,
@@ -33,7 +33,7 @@ class SoundRecorderWhenLockedDesign extends StatelessWidget {
     required this.recordIconWhenLockBackGroundColor,
     required this.counterBackGroundColor,
     required this.cancelTextBackGroundColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -91,10 +91,8 @@ class SoundRecorderWhenLockedDesign extends StatelessWidget {
               child: InkWell(
                   onTap: () {
                     soundRecordNotifier.isShow = false;
-                    String _time = soundRecordNotifier.minute.toString() +
-                        ":" +
-                        soundRecordNotifier.second.toString();
-                    if (stopRecording != null) stopRecording!(_time);
+                    String time = "${soundRecordNotifier.minute}:${soundRecordNotifier.second}";
+                    if (stopRecording != null) stopRecording!(time);
                     soundRecordNotifier.resetEdgePadding();
                   },
                   child: Padding(

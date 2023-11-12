@@ -107,14 +107,14 @@ class SocialMediaRecorder extends StatefulWidget {
     this.encode = AudioEncoderType.AAC,
     this.cancelTextBackGroundColor,
     this.radius,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
-  _SocialMediaRecorder createState() => _SocialMediaRecorder();
+  SocialMediaRecorderState createState() => SocialMediaRecorderState();
 }
 
-class _SocialMediaRecorder extends State<SocialMediaRecorder> {
+class SocialMediaRecorderState extends State<SocialMediaRecorder> {
   late SoundRecordNotifier soundRecordNotifier;
 
   @override
